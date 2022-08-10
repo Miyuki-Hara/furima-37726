@@ -45,7 +45,6 @@ class ItemsController < ApplicationController
                                  :delivery_day_id, :price).merge(user_id: current_user.id)
   end
 
-  
   def set_item
     @item = Item.find(params[:id])
   end
