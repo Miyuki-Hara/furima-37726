@@ -67,7 +67,7 @@ RSpec.describe PurchaseAddress, type: :model do
       it 'post_codeが3桁-4桁でないと保存できない' do
         @purchase_address.post_code = '123_4567'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Post code is invalid. Include hyphen(-)")
+        expect(@purchase_address.errors.full_messages).to include('Post code is invalid. Include hyphen(-)')
       end
       it 'prefectureが空だと保存できない' do
         @purchase_address.prefecture_id = ''
@@ -97,12 +97,12 @@ RSpec.describe PurchaseAddress, type: :model do
       it 'phone_numが12桁以上だと保存できない' do
         @purchase_address.phone_num = '123456789123'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Phone num is invalid")
+        expect(@purchase_address.errors.full_messages).to include('Phone num is invalid')
       end
       it 'phone_numに-があると保存できない' do
         @purchase_address.phone_num = '123-1234-1234'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Phone num is invalid")
+        expect(@purchase_address.errors.full_messages).to include('Phone num is invalid')
       end
       it 'tokenが空だと保存できない' do
         @purchase_address.token = ''
