@@ -8,6 +8,6 @@ FactoryBot.define do
     phone_num { "0#{rand(0..9)}0#{rand(1_000_000..99_999_999)}" }
     token { Faker::Internet.password(min_length: 20, max_length: 30) }
     user_id { FactoryBot.create(:user) }
-    item_id { FactoryBot.create(:user).id }
+    item_id { FactoryBot.create(:item) }
   end
 end
